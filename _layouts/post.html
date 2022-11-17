@@ -26,7 +26,7 @@ layout: default
 </div>
 {% endif %}
 
-
+{% if page.comments %}
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script>
@@ -37,7 +37,7 @@ layout: default
     let PAGE_IDENTIFIER = "https://jangjaewoong.github.io/"
     */
     var disqus_config = function () {
-      this.page.url = "http://jangjaewoong.github.io";
+      this.page.url = "{{page.url}}";
       this.page.identifier = "{{ page.url }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     
@@ -49,3 +49,4 @@ layout: default
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endif %}
