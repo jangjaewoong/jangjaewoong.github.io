@@ -3,7 +3,7 @@ layout: post
 title:  "Git과 Github"
 date:   2022-11-17 17:27:19 +0900
 categories: jekyll update
-comments : true
+comments : True
 ---
 Git은 로컬 파일의 변경사항을 기록하고 해당 파일에 대한 여러 사용자 간의 작업을 조율하기 위한 버전 관리 시스템(VCS : Version Control System)이다.
 
