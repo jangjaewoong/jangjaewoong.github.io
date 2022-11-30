@@ -1,134 +1,20 @@
-# Lanyon
+1. 사전조사
 
-Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.
+본격적인 블로그 만들기 활동에 앞서, git과 github 그리고 마크다운 언어에 대해 조금씩 공부했다. 
 
-![Lanyon](https://f.cloud.github.com/assets/98681/1825266/be03f014-71b0-11e3-9539-876e61530e24.png)
-![Lanyon with open sidebar](https://f.cloud.github.com/assets/98681/1825267/be04a914-71b0-11e3-966f-8afe9894c729.png)
+2. 원격저장소 생성
 
+이후 blog를 구성하는 근간이 되는 원격 저장소 Github에 jangjaewoong.github.io라는 이름에 저장소를 만들었다.
+이후 배경화면에 blog라는 폴더를 생성하고(폴더 안에 클론하지 않으면 이후 작업에서 오류가 떴음.) 이후 명령 프롬프트에서 작업 디렉토리를 blog로 옮기고 git clone [원격저장소 주소]를 입력해 원격저장소에 있는 파일과 구성요소들을 내 노트북, 즉 로컬저장소에 불러 왔다. 이후 간단한 html을 제작하고, 내 clone한 폴더 내에 추가한다. add-commit-push 과정을 통해 원격저장소에 올리고, 주소창에 저장소 이름(jangjaewoong.github.io)를 입력해 작동이 잘 되는지 확인했다. 
 
-## Contents
+3. Jekyll과 Ruby설치 후 Jekyll 테마 반영
 
-- [Usage](#usage)
-- [Options](#options)
-  - [Sidebar menu](#sidebar-menu)
-  - [Themes](#themes)
-  - [Reverse layout](#reverse-layout)
-- [Development](#development)
-- [Author](#author)
-- [License](#license)
+이후 블로그에 테마를 적용하기 위해 Jekyll을 설치해야했는데, window이용자는 Ruby가 필요해서 먼저 Ruby를 설치해줬다. 미리 설치해 둔 git bash에서 원격저장소가 존재하는 디렉토리로 이동한 후에 jekyll을 설치해 줬다. 이후 Jekyll serve 명령어로 내 로컬 주소로 생성된 Jekyll 기본테마의 블로그를 확인 했다. config파일의 블로그 구성요소를 변경해보고 블로그 제작에 감을 잡았다. 이후 원격저장소에 add-commmit-push하여 원격저장소에도 반영할 수 있게 했다. post폴더에 markdown 언어를 이용해 여러 게시물을 작성해보고 블로그에 반영 되는지 확인해보았다.
 
+4. Lanyon 테마 적용
 
-## Usage
+이후 Jekyll 기본 테마 외 새로운 테마를 적용시키기 위해 깔끔한 Lanyon 테마를 골랐다. github에 올라와있는 Lanyon 테마의 구성요소를 git clone을 이용해 로컬 저장소에 받아왔다. 원래 있던 것과 겹치는 파일은 Lanyon의 파일로 덮어쓰기 했다. 그 과정에서 "Bundler could not find compatible versions for gem 'hashie'"이란 오류가 발생하여 bundle update, bundle install 명령어를 통해 해결하였다.
 
-Lanyon is a theme built on top of [Poole](https://github.com/poole/poole), which provides a fully furnished Jekyll setup—just download and start the Jekyll server. See [the Poole usage guidelines](https://github.com/poole/poole#usage) for how to install and use Jekyll.
+5. 코멘트 기능 구현
 
-
-## Options
-
-Lanyon includes some customizable options, typically applied via classes on the `<body>` element.
-
-
-### Sidebar menu
-
-Create a list of nav links in the sidebar by assigning each Jekyll page the correct layout in the page's [front-matter](http://jekyllrb.com/docs/frontmatter/).
-
-```
----
-layout: page
-title: About
----
-```
-
-**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.html` page from this list by specifying the `page` layout.
-
-
-### Themes
-
-Lanyon ships with eight optional themes based on the [base16 color scheme](https://github.com/chriskempson/base16). Apply a theme to change the color scheme (mostly applies to sidebar and links).
-
-![Lanyon with red theme](https://f.cloud.github.com/assets/98681/1825270/be065110-71b0-11e3-9ed8-9b8de753a4af.png)
-![Lanyon with red theme and open sidebar](https://f.cloud.github.com/assets/98681/1825269/be05ec20-71b0-11e3-91ea-a9138ef07186.png)
-
-There are eight themes available at this time.
-
-![Available theme classes](https://f.cloud.github.com/assets/98681/1817044/e5b0ec06-6f68-11e3-83d7-acd1942797a1.png)
-
-To use a theme, add any one of the available theme classes to the `<body>` element in the `default.html` layout, like so:
-
-```html
-<body class="theme-base-08">
-  ...
-</body>
-```
-
-To create your own theme, look to the Themes section of [included CSS file](https://github.com/poole/lanyon/blob/master/public/css/lanyon.css). Copy any existing theme (they're only a few lines of CSS), rename it, and change the provided colors.
-
-
-### Reverse layout
-
-![Lanyon with reverse layout](https://f.cloud.github.com/assets/98681/1825265/be03f2e4-71b0-11e3-89f1-360705524495.png)
-![Lanyon with reverse layout and open sidebar](https://f.cloud.github.com/assets/98681/1825268/be056174-71b0-11e3-88c8-5055bca4307f.png)
-
-Reverse the page orientation with a single class.
-
-```html
-<body class="layout-reverse">
-  ...
-</body>
-```
-
-
-### Sidebar overlay instead of push
-
-Make the sidebar overlap the viewport content with a single class:
-
-```html
-<body class="sidebar-overlay">
-  ...
-</body>
-```
-
-This will keep the content stationary and slide in the sidebar over the side content. It also adds a `box-shadow` based outline to the toggle for contrast against backgrounds, as well as a `box-shadow` on the sidebar for depth.
-
-It's also available for a reversed layout when you add both classes:
-
-```html
-<body class="layout-reverse sidebar-overlay">
-  ...
-</body>
-```
-
-### Sidebar open on page load
-
-Show an open sidebar on page load by modifying the `<input>` tag within the `sidebar.html` layout to add the `checked` boolean attribute:
-
-```html
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>
-```
-
-Using Liquid you can also conditionally show the sidebar open on a per-page basis. For example, here's how you could have it open on the homepage only:
-
-```html
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" {% if page.title =="Home" %}checked{% endif %}>
-```
-
-## Development
-
-Lanyon has two branches, but only one is used for active development.
-
-- `master` for development.  **All pull requests should be to submitted against `master`.**
-- `gh-pages` for our hosted site, which includes our analytics tracking code. **Please avoid using this branch.**
-
-
-## Author
-
-**Mark Otto**
-- <https://github.com/mdo>
-- <https://twitter.com/mdo>
-
-
-## License
-
-Open sourced under the [MIT license](LICENSE.md).
-
-<3
+마지막으로 코멘트 작성 기능을 구현해보려 했다. 먼저 Disqus 홈페이지의 도움을 받기로 했다. 홈페이지 내의 여러 설정들을 마치고 블로그 속성을 관리하는 파일인 _config.yml에서 disqus를 반영해주었다. 이후 형식관련 파일인 _layouts/post.html에서 disqus형식을 반영해준다. src변수에 내 disqus URL이 확실하게 입력됬는지 조심해야한다. 이후 내가 올리는 post파일에 comments: true를 입력해 코멘트 작성 기능을 불러올 것이라고 입력해준다. 이후 add-commit-push로 원격저장소에 저장해준 뒤 결과를 확인해 줬다.
