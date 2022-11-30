@@ -1,55 +1,31 @@
 ---
 layout: post
-title:  "Hiiiii"
+title:  "Git과 Github"
 date:   2022-11-17 17:27:19 +0900
 categories: jekyll update
 comments : true
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Git은 로컬 파일의 변경사항을 기록하고 해당 파일에 대한 여러 사용자 간의 작업을 조율하기 위한 버전 관리 시스템(VCS : Version Control System)이다.
 
-Jekyll requires blog post files to be named according to the following format:
+Git hub는 깃을 클라우드 방식으로 구현된 버전 관리 시스템(VSC)이다. 로컬 파일을 깃허브 클라우드에 Push(업로드)하여 서로 다른 위치에 있는 여러 사용자가 작업할 수 있다.
 
-`YEAR-MONTH-DAY-title.MARKUP`
+방금 Push(업로드)한다고 하였는데 이에 대해 더욱 자세히 다뤄보겠다.
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+로컬 파일의 변경사항을 원격 저장소에도 적용시키기 위해서 git에선 add-commit-push 과정을 거친다.
 
-Jekyll also offers powerful support for code snippets:
+먼저 git add [파일이름]을 통해 커밋 전에 변경사항들을 Staging Area에 모아둔다.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+이후 git commit -m [커밋에 대한 설명]을 통해 변경사항들을 확정 짓고 로컬 저장소에 등록한다.
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+마지막으로 git push 명령어를 통해 로컬저장소에 등록된 변경사항을 원격저장소에도 적용시킨다.
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+반대로 git pull은 원격저장소에서의 변경사항을 로컬저장소에 적용시킬 때 사용한다.
 
-{% if page.comments %}
-<h2>Comments</h2>
-<div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    let PAGE_URL = "{{site.url}}{{page.url}}"
-    let PAGE_IDENTIFIER = "{{page.url}}"
+이처럼 git과 github은 협업할 때 자주 사용되므로 잘 숙지해두는게 좋다.
 
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://woongs-blog.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-{% endif %}
+
+
+
+
+
+
