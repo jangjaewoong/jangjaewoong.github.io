@@ -7,11 +7,7 @@ url:                 https://jangjaewoong.github.io
 paginate:            6
 permalink:           pretty
 
-# About/contact
-author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+
 
 # Gems
 plugins:
